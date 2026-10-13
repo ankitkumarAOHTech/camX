@@ -36,4 +36,4 @@ bash camX.sh
 **Website:** https://aohtech.netlify.app/  
 **Instagram:** https://www.instagram.com/ankit_com6  
 **Contact:** +91 9241140133 
-**SHOW VIDEO:** https://youtu.be/UiT5P_G1lXU?si=nub5yqJhsqdf6W7y
+**VIDEO:** https://youtu.be/UiT5P_G1lXU?si=nub5yqJhsqdf6W7y  
